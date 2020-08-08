@@ -1,0 +1,28 @@
+{
+  "name": "jsx_experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified... I should add tests...\" && exit 1",
+    "build": "npm run clean && parcel build ./public/index.html",
+    "clean": "rimraf ./dist",
+    "dev": "npm run clean && parcel ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CalvinE/tsx_webcomponent_experiment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CalvinE/tsx_webcomponent_experiment/issues"
+  },
+  "homepage": "https://github.com/CalvinE/tsx_webcomponent_experiment#readme",
+  "devDependencies": {
+    "http-serve": "^1.0.1",
+    "parcel-bundler": "^1.12.4",
+    "tslint": "^6.1.3",
+    "typescript": "^3.9.7"
+  }
+}
