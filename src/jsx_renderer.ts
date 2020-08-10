@@ -10,7 +10,7 @@ const FRAGMENT = "<></>";
 // Here is a typing for JSX in React: https://github.com/geowarin/ts-react/blob/master/typings/react/react-jsx.d.ts
 export const JSXFactory = {
     // tslint:disable-next-line: only-arrow-functions object-literal-shorthand
-    createElement: function (tag: string, attrs: {[index: string]: any} | null, ...children: any[]): Element | DocumentFragment {
+    createElement: function (tag: string, attrs: { [index: string]: any } | null, ...children: any[]): Element | DocumentFragment {
         if (tag === FRAGMENT) {
             return document.createDocumentFragment();
         }
@@ -19,11 +19,21 @@ export const JSXFactory = {
 
         for (const name in attrs) {
             if (name && attrs.hasOwnProperty(name)) {
-                const value = attrs[name];
-                if (value === true) {
-                    element.setAttribute(name, name);
-                } else if (value !== false && value !== null) {
-                    element.setAttribute(name, value.toString());
+                const attrValue = attrs[name];
+                if (name === "className") {
+                    if (typeof attrValue === "string") {
+                        const classes = attrValue.split(" ");
+                        element.classList.add(...classes);
+                    } else {
+                        throw new Error(`Value provided to className must be a string.`);
+                    }
+                } else {
+                    const value = attrValue;
+                    if (value === true) {
+                        element.setAttribute(name, name);
+                    } else if (value !== false && value !== null) {
+                        element.setAttribute(name, value.toString());
+                    }
                 }
             }
         }

@@ -22,6 +22,7 @@
   "devDependencies": {
     "http-serve": "^1.0.1",
     "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2",
     "tslint": "^6.1.3",
     "typescript": "^3.9.7"
   }

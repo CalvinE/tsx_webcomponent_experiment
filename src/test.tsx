@@ -5,7 +5,7 @@ const text = "It Works!";
 
 document.getElementById("app")?.appendChild(
     <div>
-        <h1 id="textid">{text}</h1>
+        <h1 className="this is a set of test classes" id="textid">{text}</h1>
         <img src={testImage}/>
     </div>
 );
